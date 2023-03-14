@@ -1,14 +1,24 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Playlist from '../Components/Playlist';
 
 const SearchScreen = () => {
   return (
-    <View>
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: "black",
+      }}
+    >
       <Text>SearchScreen</Text>
     </View>
-  )
+  );
 }
-
 export default SearchScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+ 
+});
+
+
+    
