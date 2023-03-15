@@ -5,27 +5,27 @@ import MainTabNavigator from "./src/navigators/MainTabNavigator";
 import TracklistScreen from "./src/Components/TracklistScreen";
 import AlbumScreen from "./src/Components/AlbumScreen";
 import ArtistSummaryScreen from "./src/Components/ArtistSummaryScreen";
+import * as Font from "expo-font";
 
 
 export default function App() {
-
-    return (
+  return (
+    <View style={styles.container}>
       <NavigationContainer>
-        <StatusBar style="black"></StatusBar>
-        <AlbumScreen/>
-        <ArtistSummaryScreen/>
+        <StatusBar style="black" />
+        <AlbumScreen />
+        <ArtistSummaryScreen />
         <TracklistScreen />
         <MainTabNavigator />
       </NavigationContainer>
-    );
-  
+    </View>
+  );
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "black",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });

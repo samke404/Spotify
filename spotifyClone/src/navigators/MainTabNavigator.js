@@ -19,6 +19,9 @@ const MainTabNavigator = () => {
           elevation: 0,
           bottom: 5,
           paddingHorizontal: 45,
+          borderTopWidth: 0,
+          backgroundColor: "#1d1d1d",
+          height:100
         },
       }}
     >
@@ -27,12 +30,12 @@ const MainTabNavigator = () => {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ color, focused }) => {
-            return(
-            <Ionicons
-              name={focused ? "home" : "home-outline"}
-              size={24}
-              color={color}
-            />
+            return (
+              <Ionicons
+                name={focused ? "home" : "home-outline"}
+                size={29}
+                color={color}
+              />
             );
           },
           tabBarInactiveTintColor: "#fffa",
@@ -40,15 +43,11 @@ const MainTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="search"
+        name="Search"
         component={SearchScreen}
         options={{
           tabBarIcon: ({ color, focused }) => {
-            return(
-             <Ionicons name={"search"}
-              size={24} 
-              color={color} />
-            );
+            return <Ionicons name={"search"} size={29} color={color} />;
           },
           tabBarInactiveTintColor: "#fffa",
           tabBarActiveTintColor: "#fff",
@@ -60,12 +59,13 @@ const MainTabNavigator = () => {
         component={LibraryScreen}
         options={{
           tabBarIcon: ({ color, focused }) => {
-            return(
-            <Ionicons
-              name={focused ? "library" : "library-outline"}
-              size={24}
-              color={color}
-            />
+            return (
+              <Ionicons
+                name={focused ? "library" : "library-outline"}
+                size={26}
+                color={color}
+    
+              />
             );
           },
           tabBarInactiveTintColor: "#fffa",

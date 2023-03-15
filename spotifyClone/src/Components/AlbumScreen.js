@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 const AlbumScreen = () => {
   return (
@@ -11,6 +12,18 @@ const AlbumScreen = () => {
         style={{ flex: 1 }}
         resizeMode="cover"
       />
+      <View
+        style={{
+          position: "absolute",
+          top: 16,
+          left: 0,
+          padding: 16,
+          zIndex: 1,
+          opacity:0.5
+        }}
+      >
+        <Ionicons name="chevron-back-circle-sharp" size={40} color="grey" />
+      </View>
       <View
         style={{
           position: "absolute",

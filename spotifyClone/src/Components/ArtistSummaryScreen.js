@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import { AntDesign, Entypo } from "@expo/vector-icons";
+import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
+import * as Font from "expo-font";
 
 const ArtistSummaryScreen = () => {
   return (
@@ -10,14 +11,17 @@ const ArtistSummaryScreen = () => {
       <View style={styles.boxContainer}>
         <View style={styles.box}>
           <Text style={styles.boxTitle}>ABALANDELAYO</Text>
-          <Entypo
-            name="dots-three-horizontal"
-            size={24}
-            color="#CCCCCC"
-            style={styles.icon}
-          />
+          <View style={styles.iconContainer}>
+            <Entypo
+              name="dots-three-horizontal"
+              size={24}
+              color="#CCCCCC"
+              style={styles.icon}
+            />
+          </View>
         </View>
       </View>
+
       <View style={styles.coverContainer}>
         <Image
           source={{
@@ -25,17 +29,33 @@ const ArtistSummaryScreen = () => {
           }}
           style={styles.cover}
         />
+        <View style={styles.heartContainer}>
+          <Ionicons
+            name="heart-circle"
+            size={24}
+            color="green"
+            style={styles.heartIcon}
+          />
+        </View>
         <View style={styles.titleContainer}>
-          <Text style={styles.coverTitle}>izingoma ezithandiwayo</Text>
-          <Text style={styles.subTitle}>5 izingoma • High Klassified</Text>
+          <Text style={styles.coverTitle}>Izingoma Ezithandiwe</Text>
+          <Text style={styles.subTitle}>5 Izingoma • High Klassified</Text>
         </View>
         <View style={styles.playContainer}>
           <View style={styles.play}>
             <AntDesign name="play" size={75} color="green" />
           </View>
         </View>
+        <View style={styles.shuffleContainer}>
+          <Ionicons
+            name="shuffle"
+            size={15}
+            color="green"
+            style={styles.shuffleIcon}
+          />
+        </View>
         <View style={styles.rightIconContainer}>
-          <AntDesign name="right" size={24} color="white" />
+          <AntDesign name="right" size={24} color="#434343" />
         </View>
       </View>
     </LinearGradient>
@@ -50,31 +70,34 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 15,
     fontWeight: "normal",
-    color: "#FFFFFF",
-    marginBottom: 20,
+    color: "#C0C0C0",
+    marginBottom: 10,
   },
   boxContainer: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     marginBottom: 20,
+    
   },
   box: {
+    display: "inline-flex",
     flexDirection: "row",
     alignItems: "center",
     padding: 5,
     borderRadius: 5,
     marginBottom: 20,
     borderWidth: 1,
-    width: "27%",
+    width: "auto",
+    height: "50%",
     borderColor: "white",
-    justifyContent: "space-between",
+    
   },
   boxTitle: {
-    fontSize: 9,
+    fontSize: 13,
     fontWeight: "bold",
-    marginRight: 10,
     color: "white",
+    marginLeft: 10,
   },
   icon: {
     marginLeft: 20,
@@ -100,29 +123,73 @@ const styles = StyleSheet.create({
   coverTitle: {
     fontSize: 15,
     fontWeight: "bold",
+
     color: "white",
     marginBottom: 5,
   },
   subTitle: {
     fontSize: 12,
-    color: "white",
+    color: "#C0C0C0",
   },
   playContainer: {
     position: "relative",
     top: -100,
-    left: 20,
+    left: 55,
     zIndex: 1,
-   backgroundColor: "white",
-    borderRadius: 80,
-    
+    backgroundColor: "white",
+    borderRadius: 100,
   },
   play: {
- borderRadius: 100,
-  width: 75,
-  height: 75,
-  alignItems: "center",
-  justifyContent: "center",
-},
+    borderRadius: 100,
+    width: 74,
+    height: 75,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: -1,
+  },
+  shuffleContainer: {
+    position: "relative",
+    bottom: 68,
+    left: 30,
+    zIndex: 3,
+    backgroundColor: "white",
+    borderRadius: 20,
+    width: 20,
+    height: 20,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  shuffleIcon: {
+    borderRadius: 20,
+    width: 15,
+    height: 15,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  heartContainer: {
+    position: "relative",
+    top: 15,
+    left: -25,
+    zIndex: 3,
+    backgroundColor: "white",
+    borderRadius: 10,
+    width: 20,
+    height: 15,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  heartIcon: {
+    borderRadius: 20,
+    height: 25,
+    left: -1,
+    top: -1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  iconContainer: {
+    left: 50,
+    bottom: 4,
+  },
 });
 
 export default ArtistSummaryScreen;
